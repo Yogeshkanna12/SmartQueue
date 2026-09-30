@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --background: #090d16;
+    --surface: #0f172a;
+    --surface-card: #131c31;
+    --surface-border: #1e293b;
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --text-muted: #64748b;
+    --brand-primary: #10b981; /* Flow Emerald */
+    --brand-accent: #06b6d4;  /* Tech Cyan */
+    --brand-indigo: #6366f1;  /* AI Violet */
+    --warning: #f59e0b;       /* Triage Amber */
+    --danger: #ef4444;        /* Critical Red */
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--text-primary);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+/* Custom scrollbars for clean UI */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #090d16;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
+
+/* Subtle pulse glow animations */
+@keyframes flow-glow {
+  0%, 100% {
+    opacity: 0.4;
+    filter: drop-shadow(0 0 12px rgba(16, 185, 129, 0.4));
+  }
+  50% {
+    opacity: 0.8;
+    filter: drop-shadow(0 0 24px rgba(16, 185, 129, 0.7));
+  }
+}
+
+.animate-flow-glow {
+  animation: flow-glow 3s ease-in-out infinite;
+}
+
+@keyframes scanline {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(1000%);
+  }
+}
+
+.scanline-effect {
+  animation: scanline 8s linear infinite;
+}
